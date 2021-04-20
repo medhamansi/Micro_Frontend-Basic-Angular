@@ -6,6 +6,7 @@ import { FlightComponent } from './flight/flight.component';
 
 import  { Injector} from '@angular/core';
 import  { createCustomElement } from '@angular/elements';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import  { createCustomElement } from '@angular/elements';
     FlightComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   entryComponents : [FlightComponent],
