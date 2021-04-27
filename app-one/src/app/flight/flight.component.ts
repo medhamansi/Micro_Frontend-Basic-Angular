@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import * as postal from 'postal'; //not sure about this line just trying
-export default postal;
+import * as postal from 'postal';
 
 @Component({
   selector: 'app-flight',
@@ -9,16 +8,24 @@ export default postal;
 })
 export class FlightComponent implements OnInit {
 
-  constructor(private postal : postal) { 
+  constructor() { 
   }
   ngOnInit(): void {
-    var subscription = this.postal.subscribe({
+    // var channel = postal.channel("mychannel");
+    // channel.publish("name.change",{name : "Dr. Who"});
+    var subscription = postal.subscribe({
       channel : "Disable",
       topic : "disable.button",
       callback : function(data, envelope){
-        console.log('Hi,Message is passing');
+        console.log('Flight');
+        console.log(data);
+        console.log('Subscriber Flight Called');
       }
+
+
+
     });
+   
   }
  
   myClickFunction(event: any) { 
